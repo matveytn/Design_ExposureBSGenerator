@@ -11,7 +11,7 @@
 		initialize: function () {
 			this.latin = false;
 			var that = this;
-			$.when(this.getTerms('js/startup-terms.json'), this.getTerms('js/latin-terms.json')).done(function (startup, ipsum) {
+			$.when(this.getTerms('js/startup-terms.json.json'), this.getTerms('js/latin-terms.json.json')).done(function (startup, ipsum) {
 				that.startupTerms = startup[0].terms;
 				that.latinTerms = ipsum[0].terms;
 				that.terms = that.startupTerms;
