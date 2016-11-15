@@ -1,5 +1,5 @@
 function test_console() {
-	$("#intro_copy").empty().append(get_paragraph());
+	$("#intro_copy").empty().append(generate_bullshit());
 }
 
 function get_random_number(min, max) {
@@ -23,10 +23,21 @@ function get_paragraph() {
 	for (var x =0; x<sentence_count; x++) {
 		var sentence = get_sentence();
 		paragraph+=sentence;
-
 		if (x !== sentence_count - 1) paragraph += " ";
 	}
 	return paragraph;
+}
+
+
+
+function generate_bullshit() {
+	var paragraphs = [];
+	var p_count = document.getElementById("p_count").value;
+	p_count = parseInt(p_count, 10);
+	p_count = typeof p_count==='number' && (p_count%1)===0 ? p_count : p_count =5;
+
+	for (var x =0; x<p_count; x++) paragraphs.push(get_paragraph());
+	return paragraphs;
 }
 
 
